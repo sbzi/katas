@@ -4,9 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import java.math.BigDecimal;
-import java.util.function.UnaryOperator;
-
-import static org.junit.Assert.*;
 
 public class PricingStrategyTest {
 
