@@ -24,4 +24,9 @@ public class BulkPricingStrategy implements PricingStrategy {
     public BigDecimal getPrice(BigDecimal quantity) {
         return quantity.divide(bulkSize, 10, RoundingMode.DOWN).multiply(bulkPrice).setScale(2, RoundingMode.UP);
     }
+
+    @Override
+    public String getLabel() {
+        return null;
+    }
 }

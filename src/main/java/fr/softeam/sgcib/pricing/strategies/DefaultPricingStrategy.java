@@ -15,4 +15,9 @@ public class DefaultPricingStrategy implements PricingStrategy{
     public BigDecimal getPrice(BigDecimal quantity) {
         return unitPrice.multiply(quantity).setScale(2, RoundingMode.UP);
     }
+
+    @Override
+    public String getLabel() {
+        return null;
+    }
 }

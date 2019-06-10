@@ -1,11 +1,12 @@
 package fr.softeam.sgcib.pricing.discount;
 
+import fr.softeam.sgcib.pricing.Labelled;
 import fr.softeam.sgcib.pricing.strategies.PricingStrategy;
 
 import java.math.BigDecimal;
 import java.util.function.UnaryOperator;
 
-public interface DiscountStrategy {
+public interface DiscountStrategy extends Labelled {
 
     BigDecimal apply(BigDecimal quantity);
 

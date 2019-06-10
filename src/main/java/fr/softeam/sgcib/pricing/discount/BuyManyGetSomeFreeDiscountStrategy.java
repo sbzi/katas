@@ -20,4 +20,9 @@ public class BuyManyGetSomeFreeDiscountStrategy implements DiscountStrategy {
     public BigDecimal apply(BigDecimal quantity) {
         return quantity.divide(bought, 0, RoundingMode.DOWN).multiply(free);
     }
+
+    @Override
+    public String getLabel() {
+        return null;
+    }
 }

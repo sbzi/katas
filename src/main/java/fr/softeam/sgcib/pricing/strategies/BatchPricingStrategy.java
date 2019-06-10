@@ -17,4 +17,9 @@ public class BatchPricingStrategy implements PricingStrategy {
     public BigDecimal getPrice(BigDecimal quantity) {
         return quantity.divide(batchSize, 10, RoundingMode.DOWN).multiply(batchPrice).setScale(2, RoundingMode.UP);
     }
+
+    @Override
+    public String getLabel() {
+        return null;
+    }
 }

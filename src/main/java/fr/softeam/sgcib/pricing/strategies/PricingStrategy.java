@@ -1,12 +1,14 @@
 package fr.softeam.sgcib.pricing.strategies;
 
+import fr.softeam.sgcib.pricing.Labelled;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.UnaryOperator;
 
-public interface PricingStrategy {
+public interface PricingStrategy extends Labelled {
 
     BigDecimal getPrice(BigDecimal quantity);
 
