@@ -28,7 +28,7 @@ public interface PricingStrategy {
 
     enum Unit {
         POUND() {
-            Map<Unit, UnaryOperator<BigDecimal>> getConverters() {
+            public Map<Unit, UnaryOperator<BigDecimal>> getConverters() {
                 HashMap<Unit, UnaryOperator<BigDecimal>> converters = new HashMap<>();
                 converters.put(Unit.OUNCE, q -> q.divide(new BigDecimal(16), 10, RoundingMode.DOWN));
                 return converters;
@@ -36,13 +36,13 @@ public interface PricingStrategy {
         },
         OUNCE() {
             @Override
-            Map<Unit, UnaryOperator<BigDecimal>> getConverters() {
+            public Map<Unit, UnaryOperator<BigDecimal>> getConverters() {
                 HashMap<Unit, UnaryOperator<BigDecimal>> converters = new HashMap<>();
                 converters.put(Unit.POUND, q -> q.multiply(new BigDecimal(16)));
                 return converters;
             }
         };
 
-        abstract Map<Unit, UnaryOperator<BigDecimal>> getConverters();
+        abstract public Map<Unit, UnaryOperator<BigDecimal>> getConverters();
     }
 }

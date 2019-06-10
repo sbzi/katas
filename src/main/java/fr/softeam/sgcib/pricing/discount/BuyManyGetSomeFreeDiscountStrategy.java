@@ -18,11 +18,6 @@ public class BuyManyGetSomeFreeDiscountStrategy implements DiscountStrategy {
 
     @Override
     public BigDecimal apply(BigDecimal quantity) {
-        return null;
-    }
-
-    @Override
-    public BigDecimal apply(BigDecimal quantity, PricingStrategy.Unit unit) {
-        return null;
+        return quantity.divide(bought, 0, RoundingMode.DOWN).multiply(free);
     }
 }
