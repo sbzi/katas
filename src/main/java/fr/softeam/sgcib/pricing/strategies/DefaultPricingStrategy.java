@@ -1,6 +1,7 @@
 package fr.softeam.sgcib.pricing.strategies;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class DefaultPricingStrategy implements PricingStrategy{
 
@@ -12,11 +13,6 @@ public class DefaultPricingStrategy implements PricingStrategy{
 
     @Override
     public BigDecimal getPrice(BigDecimal quantity) {
-        return null;
-    }
-
-    @Override
-    public BigDecimal getPrice(BigDecimal quantity, Unit unit) {
-        return null;
+        return unitPrice.multiply(quantity).setScale(2, RoundingMode.UP);
     }
 }

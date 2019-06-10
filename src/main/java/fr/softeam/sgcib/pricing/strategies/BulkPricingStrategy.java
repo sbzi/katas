@@ -1,6 +1,7 @@
 package fr.softeam.sgcib.pricing.strategies;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class BulkPricingStrategy implements PricingStrategy {
 
@@ -15,12 +16,12 @@ public class BulkPricingStrategy implements PricingStrategy {
     }
 
     @Override
-    public BigDecimal getPrice(BigDecimal quantity) {
-        return null;
+    public Unit getUnit() {
+        return unit;
     }
 
     @Override
-    public BigDecimal getPrice(BigDecimal quantity, Unit unit) {
-        return null;
+    public BigDecimal getPrice(BigDecimal quantity) {
+        return quantity.divide(bulkSize, 10, RoundingMode.DOWN).multiply(bulkPrice).setScale(2, RoundingMode.UP);
     }
 }
