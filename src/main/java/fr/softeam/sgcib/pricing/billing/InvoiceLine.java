@@ -11,26 +11,39 @@ public class InvoiceLine {
     private BigDecimal quantity;
     private PricingStrategy.Unit unit;
 
+    private InvoiceLineDetail pricingLine;
+    private InvoiceLineDetail discountLine;
+
     public InvoiceLine(Product product, BigDecimal quantity, PricingStrategy.Unit unit) {
         this.product = product;
         this.quantity = quantity;
         this.unit = unit;
+        compute();
     }
 
     public InvoiceLine(Product product, BigDecimal quantity) {
         this(product, quantity, null);
     }
 
+    private void compute() {
+        pricingLine = this.product.applyPricing(quantity, unit);
+        discountLine = this.product.applyDiscount(quantity, unit);
+    }
+
     public InvoiceLineDetail getPricingLine() {
-        return null;
+        return pricingLine;
     }
 
     public InvoiceLineDetail getDiscountLine() {
-        return null;
+        return discountLine;
     }
 
     public BigDecimal getPrice() {
-        return null;
+        BigDecimal price = pricingLine.getPrice();
+        if(discountLine != null) {
+            price = price.add(discountLine.getPrice());
+        }
+        return price;
     }
 
     @Override
