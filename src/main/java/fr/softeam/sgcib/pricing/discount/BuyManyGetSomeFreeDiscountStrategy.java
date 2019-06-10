@@ -1,6 +1,5 @@
 package fr.softeam.sgcib.pricing.discount;
 
-import fr.softeam.sgcib.pricing.strategies.PricingStrategy;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -23,6 +22,6 @@ public class BuyManyGetSomeFreeDiscountStrategy implements DiscountStrategy {
 
     @Override
     public String getLabel() {
-        return "Buy " + bought + ", " + free + " is Free";
+        return "Buy " + bought + ", " + free + " Free";
     }
 }

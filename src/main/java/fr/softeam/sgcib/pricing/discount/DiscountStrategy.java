@@ -25,9 +25,9 @@ public interface DiscountStrategy extends Labelled {
             if(converter == null) {
                 throw new UnsupportedOperationException("Conversion from " + getUnit() + " to " + unit + " not supported");
             }
-            converted = converter.apply(discounted);
+            discounted = converter.apply(discounted);
         }
-        return converted;
+        return discounted;
     }
 
     default PricingStrategy.Unit getUnit() {

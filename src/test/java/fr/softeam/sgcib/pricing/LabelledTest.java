@@ -54,6 +54,6 @@ public class LabelledTest {
         // When
         String label = ds.getLabel();
         // Then
-        Assert.assertEquals("Buy 3, 1 is Free", label);
+        Assert.assertEquals("Buy 3, 1 Free", label);
     }
 }
