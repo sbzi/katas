@@ -18,6 +18,6 @@ public class DefaultPricingStrategy implements PricingStrategy{
 
     @Override
     public String getLabel() {
-        return null;
+        return unitPrice.setScale(2, RoundingMode.UP) + "/unit";
     }
 }

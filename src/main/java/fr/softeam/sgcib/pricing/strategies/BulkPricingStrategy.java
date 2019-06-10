@@ -27,6 +27,6 @@ public class BulkPricingStrategy implements PricingStrategy {
 
     @Override
     public String getLabel() {
-        return null;
+        return bulkPrice.setScale(2, RoundingMode.UP) + "/" + bulkSize + " " + unit;
     }
 }

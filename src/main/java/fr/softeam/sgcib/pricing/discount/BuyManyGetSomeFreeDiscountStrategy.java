@@ -23,6 +23,6 @@ public class BuyManyGetSomeFreeDiscountStrategy implements DiscountStrategy {
 
     @Override
     public String getLabel() {
-        return null;
+        return "Buy " + bought + ", " + free + " is Free";
     }
 }

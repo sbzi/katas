@@ -44,7 +44,7 @@ public class LabelledTest {
         // When
         String label = ps.getLabel();
         // Then
-        Assert.assertEquals("1/3 units", label);
+        Assert.assertEquals("1.00/3 units", label);
     }
 
     @Test

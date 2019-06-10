@@ -20,6 +20,6 @@ public class BatchPricingStrategy implements PricingStrategy {
 
     @Override
     public String getLabel() {
-        return null;
+        return batchPrice.setScale(2, RoundingMode.UP) + "/" + batchSize + " units";
     }
 }
