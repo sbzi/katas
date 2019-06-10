@@ -1,5 +1,7 @@
 package fr.softeam.sgcib.pricing.discount;
 
+import fr.softeam.sgcib.pricing.strategies.PricingStrategy;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
@@ -13,9 +15,14 @@ public class BuyManyGetSomeFreeDiscountStrategy implements DiscountStrategy {
         this.free = free;
     }
 
+
     @Override
-    public BigDecimal apply(BigDecimal price, BigDecimal quantity) {
-        return price.subtract(quantity.divide(bought, 0, RoundingMode.DOWN).multiply(free).multiply(price)
-                .divide(quantity, 2, RoundingMode.UP));
+    public BigDecimal apply(BigDecimal quantity) {
+        return null;
+    }
+
+    @Override
+    public BigDecimal apply(BigDecimal quantity, PricingStrategy.Unit unit) {
+        return null;
     }
 }
